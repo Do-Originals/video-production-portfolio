@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
+import MuxPlayer from "@mux/mux-player-react";
+
 export default function OurWork() {
   return (
     <section 
@@ -27,15 +29,12 @@ export default function OurWork() {
         
         {/* Top Row - Large Item */}
         <div className="w-full bg-white rounded-[2rem] p-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-indigo-500 flex flex-col hover:-translate-y-1 transition-transform duration-300">
-          <div className="w-full aspect-video rounded-[1.5rem] overflow-hidden relative">
-            <iframe 
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/JmnwDv34H5w" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            ></iframe>
+          <div className="w-full aspect-[21/9] max-h-[600px] rounded-[1.5rem] overflow-hidden relative">
+            <MuxPlayer
+              playbackId="aMC4qDcz9KH6SnXSnjpzBIMW9aXul1sFEbzqBSJsbVI"
+              className="w-full h-full object-cover"
+              accentColor="#d41c5c"
+            />
           </div>
         </div>
 
