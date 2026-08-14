@@ -1,5 +1,6 @@
 import { Aperture, Film, Target, Video, MousePointer2, Send, PlayCircle } from "lucide-react";
 import Image from "next/image";
+import TransitionLink from "@/components/TransitionLink";
 
 const avatars = [
   "https://i.pravatar.cc/100?img=11",
@@ -70,14 +71,14 @@ export default function Hero() {
             </div>
           </button>
           
-          <button className="group relative bg-transparent border border-[#3f3f46] text-white px-7 py-3.5 rounded-full font-semibold text-[17px] flex items-center gap-2.5 transition-all duration-300 active:scale-95 overflow-hidden">
+          <TransitionLink href="/work" className="group relative bg-transparent border border-[#3f3f46] text-white px-7 py-3.5 rounded-full font-semibold text-[17px] flex items-center gap-2.5 transition-all duration-300 active:scale-95 overflow-hidden">
             <div className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 bg-[#f4f4f5] rounded-full scale-0 group-hover:scale-[20] transition-transform duration-500 ease-out z-0"></div>
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">Showcase</span>
             <div className="relative z-10 w-5 h-5 flex items-center justify-center text-white group-hover:text-black transition-colors duration-300 overflow-hidden">
               <Video className="w-5 h-5 absolute transition-all duration-300 group-hover:-translate-x-6 group-hover:opacity-0" />
               <PlayCircle className="w-5 h-5 absolute transition-all duration-300 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
             </div>
-          </button>
+          </TransitionLink>
         </div>
         
       </div>

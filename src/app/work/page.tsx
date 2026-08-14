@@ -171,9 +171,7 @@ export default function WorkPage() {
           }}
           className="flex flex-col items-center gap-4 mt-8"
         >
-          <div className="bg-rose-950/30 border border-rose-500/20 text-rose-200 px-5 py-2 rounded-full text-sm md:text-base font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#d41c5c] animate-pulse"></span> Selected Works
-          </div>
+
           
           <h1 className="text-center text-5xl md:text-[6.5rem] font-bold text-white leading-[1.1] tracking-tighter">
             Our Recent Edits<br/>

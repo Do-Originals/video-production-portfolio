@@ -7,7 +7,8 @@ export default function LogoMarquee() {
     <Image key="3" src="/clients/vercelli_client.webp" alt="Vercelli" width={320} height={128} className="object-contain h-16 md:h-24 w-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />,
     <Image key="4" src="/clients/dandj_client.webp" alt="D&J" width={320} height={128} className="object-contain h-16 md:h-24 w-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />,
     <Image key="5" src="/clients/rishab_world_client.png" alt="Rishab World" width={320} height={128} className="object-contain h-16 md:h-24 w-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />,
-    <Image key="6" src="/clients/knox_client.webp" alt="Knox" width={320} height={128} className="object-contain h-16 md:h-24 w-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+    <Image key="6" src="/clients/knox_client.webp" alt="Knox" width={320} height={128} className="object-contain h-16 md:h-24 w-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />,
+    <Image key="7" src="/clients/chatgpt_client.png" alt="ChatGPT" width={320} height={128} className="object-contain h-16 md:h-24 w-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
   ];
 
   return (
