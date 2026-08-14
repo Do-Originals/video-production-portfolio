@@ -1,147 +1,201 @@
+"use client";
+
 import WorkSection from "@/components/WorkSection";
+import CommercialSlider from "@/components/CommercialSlider";
+import PodcastSlider from "@/components/PodcastSlider";
 import CTA from "@/components/CTA";
+import ShortFormSlider from "@/components/ShortFormSlider";
+import { LampContainer } from "@/components/ui/lamp";
+import { motion } from "motion/react";
 
 export default function WorkPage() {
-  const shortFormEdits = [
+  const shortFormVideos = [
     {
-      id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=sf1",
-      channelName: "TikTok Trends",
-      views: "1.2M+ Views",
-      title: "Viral Dance Challenge Edit",
-      description: "A fast-paced, high-energy short form edit optimized for TikTok algorithm.",
+      id: "vid1",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/DO_NEW_INTT_dsvfqo.mp4",
+      title: ""
     },
     {
-      id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=sf2",
-      channelName: "Reels Pro",
-      views: "800k+ Views",
-      title: "Quick Tech Tips: iPhone Hacks",
-      description: "Snappy Instagram Reel with dynamic captions and engaging sound effects.",
-    },
-  ];
-
-  const longFormEdits = [
-    {
-      id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=lf1",
-      channelName: "Tech Insider",
-      views: "450k+ Views",
-      title: "The Future of AI: Full Deep Dive",
-      description: "A 20-minute comprehensive essay video with motion graphics and cinematic b-roll.",
+      id: "vid2",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/Every_great_project_begins_with_an_idea.This_is_the_final_result_crafted_with_creativity_precis_nk7xtv.mp4",
+      title: ""
     },
     {
-      id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=lf2",
-      channelName: "Travel Vlogs",
-      views: "210k+ Views",
-      title: "Exploring Hidden Tokyo - Cinematic Travel Vlog",
-      description: "Immersive storytelling focusing on beautiful color grading and seamless transitions.",
+      id: "vid3",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/Driving_impact_with_every_frame.Tharwani_Real_Estate_s_vision_captured_with_precision_-_shoot_by_yzhkns.mp4",
+      title: ""
     },
+    {
+      id: "vid4",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/3_years._Countless_stories._One_dream._%EF%B8%8F_Today_Tiny_Talkies_turns_3.Every_frame_every_challe_uym5nf.mp4",
+      title: ""
+    },
+    {
+      id: "vid5",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/AQMgwBxjti3EpCAbWvTj47lNMOy-PrmjBoZQQTm0vO6zijbNnVr55CZIhfGsK7NPDwqxzWEEOK6mKa62_7j-2lQOasxPiJ4siBaYS2s_ixpne4.mp4",
+      title: ""
+    },
+    {
+      id: "vid6",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/AQNYtYdzHHvXKcyDI3-6tcYSsIYO6Le7ueD1o6OxWpVkllXW6Vti_u2T3Ormgvh9GNEPXHeJ_6a9xho5rMMRPLblmcdXF66mdBY0PSo_m6bmaq.mp4",
+      title: ""
+    },
+    {
+      id: "vid7",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/%E0%A4%89%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AA%E0%A4%BE%E0%A4%B8%E0%A5%82%E0%A4%A8_%E0%A4%AE%E0%A5%81%E0%A4%82%E0%A4%AC%E0%A4%88_%E0%A4%B2%E0%A5%8B%E0%A4%95%E0%A4%B2%E0%A4%AE%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A5%87_%E0%A4%AE%E0%A5%8B%E0%A4%A0%E0%A4%BE_%E0%A4%AC%E0%A4%A6%E0%A4%B2_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%95_%E0%A4%AE%E0%A5%81%E0%A4%82%E0%A4%AC%E0%A4%88%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A5%87_%E0%A4%B9%E0%A5%80_%E0%A4%AE%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%80_%E0%A4%A8%E0%A4%95%E0%A5%8D%E0%A4%95%E0%A5%80_%E0%A4%AA%E0%A4%BE%E0%A4%B9%E0%A4%BE._Save_Share_Fo_bin7un.mp4",
+      title: ""
+    },
+    {
+      id: "vid8",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/%E0%A4%86%E0%A4%B3%E0%A4%82%E0%A4%A6%E0%A5%80%E0%A4%A4%E0%A5%80%E0%A4%B2_%E0%A4%AA%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%B0_%E0%A4%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AF%E0%A4%A3%E0%A5%80_%E0%A4%A8%E0%A4%A6%E0%A5%80_%E0%A4%AA%E0%A5%81%E0%A4%A8%E0%A5%8D%E0%A4%B9%E0%A4%BE_%E0%A4%8F%E0%A4%95%E0%A4%A6%E0%A4%BE_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A6%E0%A5%82%E0%A4%B7%E0%A4%A3%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A4%BF%E0%A4%B3%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A4_vari_newstyle_marathinews_kyygxx.mp4",
+      title: ""
+    },
+    {
+      id: "vid9",
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/Rajani_client_ah1ojz.mp4",
+      title: ""
+    }
   ];
 
   const commercialEdits = [
     {
       id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop", 
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/Tiny_Talkies_Presents-_Swami_Narayan_City_Fulfilling_Dreams_Looking_for_your_dream_home_Swa_cnnfng.mp4",
+      thumbnail: "",
       channelAvatar: "https://i.pravatar.cc/150?u=cm1",
-      channelName: "SaaS Launch",
-      views: "5M+ Views",
-      title: "Introducing DataSync Pro",
-      description: "High-conversion commercial promo highlighting key features in under 60 seconds.",
+      channelName: "Swami Narayan City",
+      views: "1.2M+ Views",
+      title: "Fulfilling Dreams TVC",
+      description: "A premium commercial highlighting the dream homes of Swami Narayan City.",
     },
     {
       id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2000&auto=format&fit=crop", 
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/The_effort_happens_behind_the_scenes.The_results_speak_for_themselves._Every_frame_is_crafte_epy6ur.mp4",
+      thumbnail: "",
       channelAvatar: "https://i.pravatar.cc/150?u=cm2",
-      channelName: "Lifestyle Brand",
-      views: "2.3M+ Views",
-      title: "Summer Collection 2024",
-      description: "Vibrant, stylish commercial edit for a lifestyle and clothing brand campaign.",
+      channelName: "Tiny Talkies",
+      views: "500k+ Views",
+      title: "Effort Meets Results",
+      description: "A cinematic look behind the scenes showcasing our production quality.",
+    },
+    {
+      id: 3,
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/AQMjMClgiGnboMqYtzD5Mg5Y7YTEibymko8uC8Fna0KH1zssJw1bi5UjK8wIP5hqVFCvTQzNRWD7y_rC2061iBd6fl-t-1eIqIILFSM_rxnjpg.mp4",
+      thumbnail: "",
+      channelAvatar: "https://i.pravatar.cc/150?u=cm3",
+      channelName: "Brand Campaign",
+      views: "800k+ Views",
+      title: "Cinematic Promo",
+      description: "High-end promotional edit designed to captivate and convert.",
+    },
+    {
+      id: 4,
+      videoUrl: "https://res.cloudinary.com/akjttfwt/video/upload/Home_isn_t_just_a_place_it_s_a_feeling_%EF%B8%8F_Watch_our_TVC_for_Tharwani_Infra_and_experience_the_pwhfxc.mp4",
+      thumbnail: "",
+      channelAvatar: "https://i.pravatar.cc/150?u=cm4",
+      channelName: "Tharwani Infra",
+      views: "2M+ Views",
+      title: "Home is a Feeling",
+      description: "An emotional and visually stunning TVC for Tharwani Infra.",
     },
   ];
 
   const documentaryEdits = [
     {
-      id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=dc1",
-      channelName: "History Now",
-      views: "890k+ Views",
-      title: "The Lost City: Untold Story",
-      description: "A gripping mini-documentary featuring archival footage and intense narrative pacing.",
+      id: 3,
+      playbackId: "aMC4qDcz9KH6SnXSnjpzBIMW9aXul1sFEbzqBSJsbVI",
+      thumbnail: "https://image.mux.com/aMC4qDcz9KH6SnXSnjpzBIMW9aXul1sFEbzqBSJsbVI/thumbnail.jpg?time=0", 
+      channelAvatar: "https://i.pravatar.cc/150?u=dc3",
+      channelName: "New Documentary",
+      views: "750k+ Views",
+      title: "Documentary Feature",
+      description: "A compelling documentary edit showcasing advanced narrative pacing.",
     },
     {
-      id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=dc2",
-      channelName: "Nature Docs",
-      views: "1.1M+ Views",
-      title: "Into the Amazon",
-      description: "Stunning wildlife documentary edit with award-winning sound design.",
+      id: 4,
+      playbackId: "4N3IKbvQ9E4F02EHTBUxGVhF00XQHQSW7R15SjHQBFvW00",
+      thumbnail: "https://image.mux.com/4N3IKbvQ9E4F02EHTBUxGVhF00XQHQSW7R15SjHQBFvW00/thumbnail.jpg?time=0", 
+      channelAvatar: "https://i.pravatar.cc/150?u=dc4",
+      channelName: "Cinematic Journey",
+      views: "1.2M+ Views",
+      title: "Untold Stories",
+      description: "Another incredible documentary edit featuring seamless transitions and flawless color grading.",
     },
   ];
 
   const podcastEdits = [
     {
       id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=pc1",
-      channelName: "The Daily Chat",
-      views: "120k+ Views",
-      title: "Episode 45: Tech Entrepreneurship",
-      description: "Multi-cam podcast edit synced perfectly with clean audio mixing.",
+      playbackId: "zvVhI01lCZy1zt4Und41mfk01BfPTyPoENpP02rgS7UEF4",
+      thumbnail: "https://image.mux.com/zvVhI01lCZy1zt4Und41mfk01BfPTyPoENpP02rgS7UEF4/thumbnail.jpg?time=0",
+      channelAvatar: "https://i.pravatar.cc/150?u=podcast1",
+      channelName: "Finance Insights",
+      views: "250k+ Views",
+      title: "Finance & Wealth Management",
+      description: "Deep dive into investment strategies and smart wealth management for the modern era.",
     },
     {
       id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1581368135153-a506cf13b1e1?q=80&w=2000&auto=format&fit=crop", 
-      channelAvatar: "https://i.pravatar.cc/150?u=pc2",
-      channelName: "Deep Dive Podcast",
-      views: "300k+ Views",
-      title: "Interview with a CEO",
-      description: "Engaging podcast highlights focusing on key conversational moments.",
+      playbackId: "37V9iM2fR6Oe996mhB6O602Ao00GRt9hdpV8f51A93ge00",
+      thumbnail: "https://image.mux.com/37V9iM2fR6Oe996mhB6O602Ao00GRt9hdpV8f51A93ge00/thumbnail.jpg?time=0",
+      channelAvatar: "https://i.pravatar.cc/150?u=podcast2",
+      channelName: "Mental Health Matters",
+      views: "180k+ Views",
+      title: "Emotional Wellness & Relationships",
+      description: "A candid conversation about relationship goals, emotional wellness, and personal growth.",
+    },
+    {
+      id: 3,
+      playbackId: "4LMs7Ep7dm82fhcPN4NKKGGIdABxpXjKXSV6XPd8C01Q",
+      thumbnail: "https://image.mux.com/4LMs7Ep7dm82fhcPN4NKKGGIdABxpXjKXSV6XPd8C01Q/thumbnail.jpg?time=0",
+      channelAvatar: "https://i.pravatar.cc/150?u=podcast3",
+      channelName: "Creator Series",
+      views: "320k+ Views",
+      title: "Building a Creative Business",
+      description: "Expert insights on scaling a creative business and mastering the art of content creation.",
     },
   ];
 
   return (
-    <main className="flex flex-col w-full bg-white min-h-screen font-sans pt-12 md:pt-20">
+    <main className="flex flex-col w-full bg-white min-h-screen font-sans">
       
-      {/* Global Page Header */}
-      <section className="w-full pt-16 md:pt-24 px-4 md:px-12 flex justify-center bg-[#fafafa]">
-        <div className="w-full max-w-[1200px] flex flex-col items-start gap-6 max-w-3xl">
-          <div className="bg-white border border-gray-200 text-gray-800 px-4 py-1.5 rounded-full text-[14px] font-semibold flex items-center gap-1.5 shadow-sm">
-            <span className="text-[#ea580c] font-bold text-lg leading-none">+</span> Selected Works
+      {/* Global Page Header with Lamp Effect */}
+      <LampContainer>
+        <motion.div
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="flex flex-col items-center gap-4 mt-8"
+        >
+          <div className="bg-rose-950/30 border border-rose-500/20 text-rose-200 px-5 py-2 rounded-full text-sm md:text-base font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#d41c5c] animate-pulse"></span> Selected Works
           </div>
           
-          <h1 className="text-5xl md:text-[5.5rem] font-bold text-black leading-[1.05] tracking-tight">
+          <h1 className="text-center text-5xl md:text-[6.5rem] font-bold text-white leading-[1.1] tracking-tighter">
             Our Recent Edits<br/>
-            <span className="text-[#ea580c]">in Action</span>
+            <span className="bg-gradient-to-r from-rose-400 to-[#d41c5c] bg-clip-text text-transparent drop-shadow-sm">in Action</span>
           </h1>
-        </div>
-      </section>
+          
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl text-center mt-4 font-medium leading-relaxed">
+            Explore our curated portfolio of high-performing video content, crafted to engage audiences and elevate brands across every platform.
+          </p>
+        </motion.div>
+      </LampContainer>
 
-      <WorkSection 
-        title={<>Short form <br/><span className="text-[#ea580c]">(Reels, Shorts)</span></>}
+      <ShortFormSlider 
+        title={<>Short form <br/><span className="text-[#d41c5c]">(Reels, Shorts)</span></>}
         description="Bite-sized, highly engaging content engineered for algorithmic success on TikTok, Reels, and Shorts."
-        edits={shortFormEdits}
+        videos={shortFormVideos}
       />
       
       <div className="w-full h-px bg-gray-200"></div>
 
-      <WorkSection 
-        title={<>Long form <br/><span className="text-[#ea580c]">Videos</span></>}
-        description="Comprehensive, retention-optimized videos that tell a complete story and keep viewers hooked."
-        edits={longFormEdits}
-      />
-
-      <div className="w-full h-px bg-gray-200"></div>
-
-      <WorkSection 
-        title={<><span className="text-[#ea580c]">Commercials</span></>}
+      <CommercialSlider 
+        title={<><span className="text-[#d41c5c]">Commercials</span></>}
         description="High-end promotional edits designed to convert viewers into customers with premium branding."
         edits={commercialEdits}
       />
@@ -149,15 +203,15 @@ export default function WorkPage() {
       <div className="w-full h-px bg-gray-200"></div>
 
       <WorkSection 
-        title={<><span className="text-[#ea580c]">Documentary</span></>}
+        title={<><span className="text-[#d41c5c]">Documentary</span></>}
         description="Cinematic storytelling, pacing, and color grading that bring real-world stories to life."
         edits={documentaryEdits}
       />
 
       <div className="w-full h-px bg-gray-200"></div>
 
-      <WorkSection 
-        title={<><span className="text-[#ea580c]">Podcast</span></>}
+      <PodcastSlider 
+        title={<><span className="text-[#d41c5c]">Podcast</span></>}
         description="Seamless multi-camera switching and audio cleanup for professional video podcasts."
         edits={podcastEdits}
       />
