@@ -55,7 +55,7 @@ export default function CustomVideoCard({ playbackId, theme = "light" }: CustomV
           accentColor="#d41c5c"
           onPlay={handlePlay}
           onPause={handlePause}
-          style={{ '--controls': 'none' } as React.CSSProperties}
+          style={{ '--controls': 'none' } as any}
           muted={isMuted}
           nohotkeys
         />
