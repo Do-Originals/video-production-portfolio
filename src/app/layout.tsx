@@ -27,20 +27,11 @@ export const metadata: Metadata = {
     siteName: "Do Originals",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "https://studio.dooriginals.com/social-preview.png",
-        width: 1200,
-        height: 630,
-        alt: "Do Originals | Video Production Studio",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Do Originals | Video Production Studio",
     description: "A team of video editors obsessed with storytelling.",
-    images: ["https://studio.dooriginals.com/social-preview.png"],
   },
 };
 
