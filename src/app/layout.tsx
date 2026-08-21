@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/social-preview.png",
+        url: "https://studio.dooriginals.com/social-preview.png",
         width: 1200,
         height: 630,
         alt: "Do Originals | Video Production Studio",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Do Originals | Video Production Studio",
     description: "A team of video editors obsessed with storytelling.",
-    images: ["/social-preview.png"],
+    images: ["https://studio.dooriginals.com/social-preview.png"],
   },
 };
 
